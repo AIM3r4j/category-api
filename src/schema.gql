@@ -1,0 +1,26 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type Category {
+  _id: ID!
+  active: Boolean!
+  name: String!
+  parent: Category
+}
+
+input CreateCategoryDto {
+  name: String!
+  parent: String
+}
+
+type Mutation {
+  createCategory(createCategoryDto: CreateCategoryDto!): Category!
+  deactivateCategory(id: String!): Category!
+  reactivateCategory(id: String!): Category!
+}
+
+type Query {
+  categories: [Category!]!
+  category(id: String!): Category!
+}
